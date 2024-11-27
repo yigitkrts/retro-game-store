@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Games - Home</title>
+  <style>
+    /* Genel Stiller */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #f44336;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #f44336;
+      text-decoration: none;
+    }
+
+    /* Header Stilleri */
+    header {
+      background-color: #292929;
+      padding: 10px 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar li {
+      display: inline;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .logo img {
+      max-height: 75px;
+    }
+
+    /* Ana Konteyner */
+    main {
+      margin-top: 70px;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin-bottom: 20px; /* Azaltıldı */
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: none;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-buttons button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    /* Reklam Yazısı */
+    .advert {
+      position: absolute;
+      top: 10%; /* Sol üst taraf */
+      left: 5%; /* Hafif sola kaydırarak */
+      font-size: 48px; /* Daha büyük yazı */
+      font-weight: bold;
+      text-transform: uppercase; /* Büyük harfler */
+      color: white; /* Beyaz yazı */
+      text-decoration: underline; /* Altı çizili */
+      cursor: pointer;
+    }
+
+    .advert a {
+      color: white; /* Beyaz metin */
+      text-decoration: underline;
+    }
+
+    .advert a:hover {
+      text-decoration: none;
+    }
+
+    /* Footer Stilleri */
+    footer {
+      background-color: #292929;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 10px; /* Boşluk azaltıldı */
+    }
+
+    footer a {
+      color: #f44336;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/retrogameslogo.png" alt="Retro Games Logo"></a>
+    </div>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Ana İçerik -->
+  <main>
+    <h1>Welcome to Retro Games</h1>
+    <p>Explore the golden era of gaming. Check out our collection of retro classics and join our community!</p>
+
+    <!-- Slider -->
+    <div class="slider">
+      <div class="slide active">
+        <img src="images/quake.jpg" alt="Slider Image 1">
+        <div class="advert">
+          <a href="https://store.steampowered.com/app/2310/Quake/" target="_blank">Quake 1996</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/doom1993.jpeg" alt="Doom 1993">
+        <div class="advert">
+          <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank">DOOM 1993</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/sonic.jpg" alt="Slider Image 3">
+        <div class="advert">
+          <a href="https://www.retrogames.cz/play_117-Genesis.php" target="_blank">Sonic 1991</a>
+        </div>
+      </div>
+      <div class="slider-buttons">
+        <button id="prev">❮</button>
+        <button id="next">❯</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript Kodu -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let currentIndex = 0;
+    let interval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+      resetInterval();
+    });
+
+    next.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+      resetInterval();
+    });
+
+    function startAutoSlide() {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }, 3000);
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      startAutoSlide();
+    }
+
+    showSlide(currentIndex);
+    startAutoSlide();
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Retro Games. Tüm hakları saklıdır.</p>
+    <p><a href="privacy-policy.html">Gizlilik Politikası</a> | <a href="terms-of-service.html">Kullanım Şartları</a></p>
+  </footer>
+
+</body>
+
+</html>
