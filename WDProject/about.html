@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/92f34d9fc0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-LMntbTvmHzp+mb7EnBuRcZlqhXjI6fWnvkMKO9KroCj9xcH5XZm7DuXlFfRSi2zoC0YDUJcT30Qqv1IrgleBrA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <style>
+        /*page*/
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3498db;
+            font-size: larger;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        .about-section,
+        .team-section {
+            flex: 1;
+            margin: 90px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+
+
+        .about-section h2,
+        .team-section h2 {
+            text-align: center;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .team-member img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+            </div>
+
+            <ul class="nav_links">
+                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="museums.html"><i class="fas fa-university"></i>Museums</a></li>
+                <li><a href="travels.html"><i class="fas fa-globe"></i> Travels</a></li>
+                <li><a href="meals.html"><i class="fas fa-utensils"></i>Meals</a></li>
+                <li><a href="contact.html"><i class="fas fa-user"></i> Contact</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
+            </ul>
+            </div>
+            <div class="search-box">
+                <form class="box" style="padding-right:100px ;" action="#" method="post">
+                    <input type="text" placeholder="Search" name="search">
+                    <button style="font-size: 20px;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+
+            </div>
+        </section>
+    </header>
+    <br><br><br><br><br>
+    <div class="container">
+
+
+        <div class="about-section">
+            <!-- İkinci Kısım: Hakkında -->
+            <h2>About Us</h2>
+            <h3>Who Are We ?</h3>
+            <p>We are a company that offers digital solutions in the tourism industry. This company, founded by three
+                friends in 2023, aims to promote Istanbul and provide the best service to customers. We aim to make the
+                travel experience more unforgettable with our innovative approach, experienced team and
+                technology-integrated solutions.</p>
+
+            <h3>What Do We Do ?</h3>
+            <p>We are a company that offers digital solutions in the tourism industry. We develop innovative solutions
+                on digital platforms, aiming to provide customers with special travel experiences. We work to promote
+                Istanbul and give visitors unforgettable moments.</p>
+        </div>
+
+        <div class="team-section">
+            <!-- Üçüncü Kısım: Ekip Üyeleri -->
+            <h2>Team Members</h2>
+
+            <div class="team-member">
+
+                <h3>Ayhan Serin</h3>
+                <p>Co-Founder</p>
+            </div>
+
+            <div class="team-member">
+
+                <h3>Ahmet Anıl Ertemiz</h3>
+                <p>Co-Founder</p>
+            </div>
+
+            <div class="team-member">
+
+                <h3> İbrahim Halil Özacar</h3>
+                <P>Co-Founder</P>
+            </div>
+
+            <!-- Diğer ekip üyeleri eklenebilir -->
+        </div>
+    </div>
+    <br><br>
+    <!--Footer-->
+    <footer>
+        <h3>Follow us on social media</h3>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

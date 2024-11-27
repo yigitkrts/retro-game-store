@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discovery Istanbul</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/92f34d9fc0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-LMntbTvmHzp+mb7EnBuRcZlqhXjI6fWnvkMKO9KroCj9xcH5XZm7DuXlFfRSi2zoC0YDUJcT30Qqv1IrgleBrA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .container {
+      background-color: white;
+    }
+  </style>
+  <style>
+    .meals {
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!--Navbar-->
+  <header>
+    <section>
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        </div>
+      </div>
+
+      <ul class="nav_links">
+        <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="museums.html"><i class="fas fa-university"></i>Museums</a></li>
+        <li><a href="travels.html"><i class="fas fa-globe"></i> Travels</a></li>
+        <li><a href="meals.html"><i class="fas fa-utensils"></i>Meals</a></li>
+        <li><a href="contact.html"><i class="fas fa-user"></i> Contact</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
+      </ul>
+      </div>
+      <div class="search-box">
+        <form class="box" style="padding-right:100px ;" action="#" method="post">
+          <input type="text" placeholder="Search" name="search">
+          <button style="font-size: 20px;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+      </div>
+    </section>
+  </header>
+  <br>
+  <br>
+  <br>
+
+  <!--Slider-->
+  <div class="slider-container">
+    <div class="slide active" style="background-image:url('images/istanbul\ boğaz.jpg');"></div>
+    <div class="slide" style="background-image: url('images/istanbul4k.jpg');"></div>
+    <div class="slide" style="background-image: url('images/istanbulgündüz.jpg');"></div>
+    <button id="prevBtn" onclick="prevSlide()">❮</button>
+    <button id="nextBtn" onclick="nextSlide()">❯</button>
+
+  </div>
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Initial slide display
+    showSlide(currentSlide);
+  </script>
+
+
+  <!--Home Page-->
+  <br>
+  <div class="card" style="background-color: rgb(12, 72, 124);">
+    <div class="container" style="background-color: #29292b;">
+      <div class="text-center my-3" style="color: aliceblue;">
+        <h1 class="text-center my-3">Museums</h1>
+      </div><br>
+      <div class="container">
+
+        <section id="M-S"><br><br><br><br>
+
+
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <img src="images/topkapipalace.jpg" width="300" height="250" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Topkapi Palace Museum</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img src="images/dolmabahcepalace.jpg" width="300" height="250" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dolmabahce Palace Museum</h5>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <div class="card">
+                  <img src="images/basilicacistern.jpg" width="300" height="250" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Basilica Cistern Museum</h5>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/ayasofya.jpg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Hagia Sophia</h5>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/galataTower.jpg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Galata Tower</h5>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/yildizpalace.jpg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Yıldız Palace </h5>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <a class="btn btn-primary" href="museums.html" target="_blank" role="button">MORE INFORMATION</a>
+              </div>
+            </div>
+        </section>
+      </div>
+      <br>
+      <br>
+      <h1 class="text-center my-3" style="color: aliceblue;">Travels</h1>
+      <div class="container my-5" style="background-color: white;">
+
+        <section id="T-S"><br><br><br><br>
+
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <img src="images/sultanahmet.jpg" width="300" height="250" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Sultanahmet Square</h5>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img src="images/gulhanepark.jpg" width="300" height="250" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Gülhane Park</h5>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img src="images/grandbazaar.jpg" width="300" height="250" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Grand Bazaar</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="container"> 
+              <div class="row">
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/taksimsquare.jpeg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Taksim Square</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/ataturk-arboretum.jpg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Atatürk Arboretum</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm my-3">
+                  <div class="card">
+                    <img src="images/belgrad-forest.jpg" width="300" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Belgrad Forest</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <a class="btn btn-primary" href="travels.html" target="_blank" role="button">MORE INFORMATION</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        </section>
+      </div>
+
+      <br>
+      <section id="F-O"></section>
+      <h1 class="text-center my-3" style="color: aliceblue;">Meals</h1>
+      <div class="container my-5" style="background-color: white;">
+
+        <br><br><br><br>
+
+        <div class="row">
+          <div class="col-sm">
+            <div class="card">
+              <img src="images/Balikekmek2.jpg" width="300" height="250" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Fish and Bread</h5>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card">
+              <img src="images/Doner.jpg" width="300" height="250" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Döner</h5><br><br><br>
+                <div class="text-center">
+                  <a class="btn btn-primary" href="meals.html" target="_blank" role="button">MORE INFORMATION</a>
+
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card">
+              <img src="images/Kumpir.jpg" width="300" height="250" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Kumpir</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer-->
+  <footer>
+    <h3>Follow us on social media</h3>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+</body>
+
+
+</html>
